@@ -4,9 +4,13 @@ def calculator():
 
     while True:
 
-        number_1 = float(input('Введите первое число: '))
+        try:
+            number_1 = float(input('Введите первое число: '))
+            number_2 = float(input('Введите второе число: '))
+        except:
+            print('Ошибка! Введите число')
+            break
         operator = input('Введите оператор для вычисления(+, -, *, /): ')
-        number_2 = float(input('Введите второе число: '))
 
         if operator == '+':
             print(number_1 + number_2)
@@ -24,8 +28,7 @@ def calculator():
                 print(number_1 / number_2)
             break
         else:
-            print('Ошибка! Повторите заново\n')
+            print('Ошибка! Арифметический оператор указан\n')
             
 
 calculator()
-
